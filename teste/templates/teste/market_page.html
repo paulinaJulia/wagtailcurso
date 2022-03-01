@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+
+{% block content %}
+    {% for block in frag.content %}
+    {% include_block block %}
+    {% endfor %}
+    
+    {{page.titulo}}
+    {% image page.image original as img %}
+    <img src="{{img.url}}">
+   
+    
+{%endblock %}
